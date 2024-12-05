@@ -3,74 +3,39 @@
     <div class="col-md-8">
       <div class="timeline">
         <div class="d-flex mb-3">
-          <div class="timeline-date text-muted align-self-start mt-1">3d</div>
+          <div class="timeline-date text-muted align-self-start mt-1"></div>
           <div class="timeline-icon me-3 align-self-start mt-1">
             <i class="bi bi-chat-left-text text-info"></i>
           </div>
           <div class="timeline-card card flex-grow-1">
             <div class="card-body">
-              <textarea class="form-control mb-3" rows="3"
+              <textarea [(ngModel)]="newItem.text" class="form-control mb-3" rows="3"
                 placeholder="Add a note about Milton Romaguera..."></textarea>
               <div class="d-flex justify-content-between align-items-center">
                 <div>
-                  <button class="btn btn-menu-item me-2"><i class="bi bi-person-fill"></i></button>
-                  <button class="btn btn-menu-item me-2"><i class="bi bi-telephone-fill"></i></button>
-                  <button class="btn btn-menu-item me-2"><i class="bi bi-chat-left-text-fill"></i></button>
-                  <button class="btn btn-menu-item me-2"><i class="bi bi-cup-fill"></i></button>
+                  <button *ngFor="let icon of icons" class="btn btn-menu-item me-2"
+                    [class.selected]="icon === newItem.icon" (click)="selectIcon(icon)"
+                    [ngClass]="{ 'active-icon': selectedIcon === icon }">
+                    <i [class]="'bi ' + icon"></i>
+                  </button>
                 </div>
-                <button class="btn btn-info text-white">Submit</button>
+                <button class="btn btn-info text-white" (click)="addItem()">Submit</button>
               </div>
             </div>
           </div>
         </div>
-        <div class="d-flex mb-3">
-          <div class="timeline-date text-muted align-self-start mt-1">3d</div>
+        <div *ngFor="let item of timelineItems" class="d-flex mb-3">
+          <div class="timeline-date text-muted align-self-start mt-1">{{ item.date }}</div>
           <div class="timeline-icon me-3 align-self-start mt-1">
-            <i class="bi bi-chat-left-text text-info"></i>
+            <i [class]="'bi ' + item.icon + ' text-info'"></i>
           </div>
           <div class="timeline-card card flex-grow-1">
             <div class="card-body py-2">
-              <p class="mb-0">You had a meeting with <span class="text-info">Milton Romaguera</span></p>
-              <small class="text-muted">And a more formal meeting.</small>
-            </div>
-          </div>
-        </div>
-
-        <div class="d-flex mb-3">
-          <div class="timeline-date text-muted align-self-start mt-1">5d</div>
-          <div class="timeline-icon me-3 align-self-start mt-1">
-            <i class="bi bi-telephone text-info"></i>
-          </div>
-          <div class="timeline-card card flex-grow-1">
-            <div class="card-body py-2">
-              <p class="mb-0">You had a call with <span class="text-info">Milton Romaguera</span></p>
-              <small class="text-muted">Then we had a follow-up phone call.</small>
-            </div>
-          </div>
-        </div>
-
-        <div class="d-flex mb-3">
-          <div class="timeline-date text-muted align-self-start mt-1">6d</div>
-          <div class="timeline-icon me-3 align-self-start mt-1">
-            <i class="bi bi-cup text-info"></i>
-          </div>
-          <div class="timeline-card card flex-grow-1">
-            <div class="card-body py-2">
-              <p class="mb-0">You had a coffee with <span class="text-info">Milton Romaguera</span></p>
-              <small class="text-muted">We had coffee!</small>
-            </div>
-          </div>
-        </div>
-
-        <div class="d-flex mb-3">
-          <div class="timeline-date text-muted align-self-start mt-1">14d</div>
-          <div class="timeline-icon me-3 align-self-start mt-1">
-            <i class="bi bi-file-text text-info"></i>
-          </div>
-          <div class="timeline-card card flex-grow-1">
-            <div class="card-body py-2">
-              <p class="mb-0">You added a note to <span class="text-info">Milton Romaguera</span></p>
-              <small class="text-muted">A test note of message type!</small>
+              <p class="mb-0">{{ item.text }}</p>
+              <div class="d-flex justify-content-between">
+                <small class="text-muted">{{ item.description }}</small>
+                <button class="btn  btn-menu-item active-icon" (click)="removeItem(item)"><i class="bi bi-trash-fill"></i></button>
+              </div>
             </div>
           </div>
         </div>

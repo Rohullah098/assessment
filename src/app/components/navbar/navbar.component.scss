@@ -1,20 +1,33 @@
-.navbar{
-  background: linear-gradient(135deg, #6C5CE7 0%, #A29BFE 100%);
+.navbar {
+  background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+  min-height: 100px;
 }
 
 .nav-item {
-  font-family: 'Lilita One';
-  font-size: 20px;
+  font-family: "Lilita One";
+  font-size: 35px;
   font-weight: 400;
   text-align: center;
-  text-underline-position: 'from-font';
+  text-underline-position: "from-font";
   text-decoration-skip-ink: none;
-  color: #FFB400;
+  color: #ffb400;
   text-decoration: none;
 }
 
 .separator {
-  color: #FFB400;
-  padding: 0 2px;
-  font-size: 20px;
+  color: #ffb400;
+  padding: 0 3px;
+  font-size: 30px;
+}
+
+@media screen and (max-width:770px) {
+  .nav-item {
+
+    font-size: 20px !important;
+
+  }
+
+  .separator {
+    font-size: 20px !important;
+  }
 }

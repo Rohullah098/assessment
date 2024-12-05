@@ -10,11 +10,17 @@
     .footer-text {
       color: #fff;
       font-family: "Poppins";
-      font-size: 20px;
+      font-size: 50px;
       font-weight: 500;
       text-underline-position: "from-font";
       text-decoration-skip-ink: none;
       margin: 0px;
     }
+  }
+}
+
+@media screen and (max-width:770px) {
+  .footer-text{
+    font-size: 18px !important;
   }
 }
