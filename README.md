@@ -2,6 +2,25 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.2.
 
+# Node and VS Code Version
+### Node.js: 20.0.0
+### VS Code: 1.95
+# Tasks and Routes
+
+## The following tasks are implemented and can be accessed via the respective routes:
+
+# TEST 1 - ANGULAR ACTIVITY LIST TO CREATE
+### You can access this task via /task1.
+
+# TEST 2 - Angular Landing Page
+
+### You can access this task via /task2.
+
+# TEST 3 - General Website Development
+### You can access this task via /task3.
+
+Each task represents a unique feature or functionality, and the UI components for these tasks have been designed as standalone components for reusability.
+
 ## Development server
 
 To start a local development server, run:
@@ -12,14 +31,6 @@ ng serve
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Tasks and Routes
-The following tasks are implemented and can be accessed via the respective routes:
-
-### Task 1: Visit /task1 for the implementation of Task 1.
-### Task 2: Visit /task2 for the implementation of Task 2.
-### Task 3: Visit /task3 for the implementation of Task 3.
-
-** Each task represents a unique feature or functionality, and the UI components for these tasks have been designed as standalone components for reusability. **
 
 
 
