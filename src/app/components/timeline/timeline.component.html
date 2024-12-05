@@ -9,7 +9,9 @@
         <p class="mb-0">{{ item.text }}</p>
         <div class="d-flex justify-content-between">
           <small class="text-muted">{{ item.description }}</small>
-          <button class="btn  btn-menu-item active-icon" (click)="removeItem(item)"><i class="bi bi-trash-fill"></i></button>
+          @if (!['3d','5d'].includes(item.date)) {
+            <button class="btn  btn-menu-item active-icon" (click)="removeItem(item)"><i class="bi bi-trash-fill"></i></button>
+          }
         </div>
       </div>
     </div>
