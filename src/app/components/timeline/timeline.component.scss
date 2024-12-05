@@ -36,14 +36,6 @@
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   }
 }
-
-.form-control {
-  &:focus {
-    border-color: #17a2b8;
-    box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.25);
-  }
-}
-
 .btn-info {
   background-color: #17a2b8;
   border-color: #17a2b8;
@@ -53,7 +45,6 @@
     border-color: #117a8b;
   }
 }
-
 .btn-menu-item {
   background: #ffff;
   border-radius: 20px;
@@ -69,4 +60,3 @@
   background: #17a2b8 !important;
   color: #ffffff !important;
 }
-
