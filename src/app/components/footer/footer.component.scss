@@ -1,0 +1,20 @@
+.bg-footer {
+  background-image: url("../../../assets/svgs/footer\ 2.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  aspect-ratio: 191/24;
+  .footer-container {
+    align-items: end;
+    display: flex;
+    .footer-text {
+      color: #fff;
+      font-family: "Poppins";
+      font-size: 20px;
+      font-weight: 500;
+      text-underline-position: "from-font";
+      text-decoration-skip-ink: none;
+      margin: 0px;
+    }
+  }
+}

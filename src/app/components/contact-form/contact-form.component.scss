@@ -1,0 +1,40 @@
+.contact-title {
+  color: #6c5ce7;
+  font-family: "Lilita One";
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 18.58px;
+  text-align: center;
+  text-underline-position: "from-font";
+  text-decoration-skip-ink: none;
+}
+
+.form-control {
+  border-radius: 50px;
+  background: #a29bfe;
+  border: none;
+  color: #ffff;
+  font-family: 'Poppins';
+  &::placeholder {
+    color: #ffffff;
+    text-align: center;
+  }
+}
+
+.small-text-contact {
+  font-family: 'Poppins';
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 10px;
+  text-align: center;
+  text-underline-position: 'from-font';
+  text-decoration-skip-ink: none;
+  color: #6C5CE7;
+}
+.btn-text{
+  width: 162px;
+  border-radius: 50px;
+  padding: 9px;
+  background: #FFB400;
+  color: #FFFFFF;
+}

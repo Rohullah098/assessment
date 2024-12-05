@@ -1,0 +1,20 @@
+.navbar{
+  background: linear-gradient(135deg, #6C5CE7 0%, #A29BFE 100%);
+}
+
+.nav-item {
+  font-family: 'Lilita One';
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  text-underline-position: 'from-font';
+  text-decoration-skip-ink: none;
+  color: #FFB400;
+  text-decoration: none;
+}
+
+.separator {
+  color: #FFB400;
+  padding: 0 2px;
+  font-size: 20px;
+}
