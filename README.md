@@ -15,10 +15,11 @@ Once the server is running, open your browser and navigate to `http://localhost:
 ## Tasks and Routes
 The following tasks are implemented and can be accessed via the respective routes:
 
-Task 1: Visit /task1 for the implementation of Task 1.
-Task 2: Visit /task2 for the implementation of Task 2.
-Task 3: Visit /task3 for the implementation of Task 3.
-Each task represents a unique feature or functionality, and the UI components for these tasks have been designed as standalone components for reusability.
+### Task 1: Visit /task1 for the implementation of Task 1.
+### Task 2: Visit /task2 for the implementation of Task 2.
+### Task 3: Visit /task3 for the implementation of Task 3.
+
+** Each task represents a unique feature or functionality, and the UI components for these tasks have been designed as standalone components for reusability. **
 
 
 
@@ -68,9 +69,9 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Libraries and Dependencies
 The project uses the following key dependencies:
 
-## Bootstrap 5.3.3: For UI styling and responsive design. Bootstrap utilities and components are integrated for creating elegant and modern interfaces.
-## TypeScript 5.6.2: Ensures strong typing and modern JavaScript features during development.
-## Reusable UI Components
+### Bootstrap 5.3.3: For UI styling and responsive design. Bootstrap utilities and components are integrated for creating elegant and modern interfaces.
+###  TypeScript 5.6.2: Ensures strong typing and modern JavaScript features during development.
+### Reusable UI Components
 To ensure modularity and reusability, all UI components are created as standalone components. These components can be reused across multiple tasks and parts of the application. Each component encapsulates its styles, templates, and logic, adhering to Angular best practices.
 
 ## Examples of Standalone Components
