@@ -6,7 +6,7 @@ import { TimelineItem } from '../types/Item';
 
 @Component({
   selector: 'app-task1',
-  imports: [TimelineComponent,FormsModule,CommonModule],
+  imports: [TimelineComponent, FormsModule, CommonModule],
   templateUrl: './task1.component.html',
   styleUrl: './task1.component.scss'
 })
@@ -36,10 +36,17 @@ export class Task1Component {
     date: 'Now',
     description: '',
   };
-   // Select an icon
-   selectIcon(icon: string) {
+  // Select an icon
+  selectIcon(icon: string) {
     this.newItem.icon = icon;
-    this.selectedIcon=icon;
+    this.selectedIcon = icon;
+  }
+
+  onTextInput(event: Event) {
+    const inputElement = event.target as HTMLTextAreaElement;
+    if (inputElement) {
+      this.newItem.text = inputElement.value;
+    }
   }
 
   // Add new timeline item
@@ -48,7 +55,7 @@ export class Task1Component {
       this.timelineItems.unshift({ ...this.newItem });
       this.newItem.text = '';
       this.newItem.icon = '';
-      this.selectedIcon='';
+      this.selectedIcon = '';
       this.newItem.description = 'Newly added timeline item.';
     } else {
       alert('Please enter text and select an icon!');
