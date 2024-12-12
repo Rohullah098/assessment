@@ -11,18 +11,19 @@ import { TimelineItem } from '../types/Item';
   styleUrl: './task1.component.scss'
 })
 export class Task1Component {
-  selectedIcon: string = '';
+  selectedIcon: string = 'bi-chat-left-text';
+  selectedText: string = 'meeting'
   icons = ['bi-chat-left-text', 'bi-telephone', 'bi-cup', 'bi-file-text'];
 
   timelineItems: TimelineItem[] = [
     {
-      date: '3d',
+      date: '12/10/24',
       icon: 'bi-chat-left-text',
       text: 'You had a meeting with Milton Romaguera',
       description: 'And a more formal meeting.',
     },
     {
-      date: '5d',
+      date: '12/9/24',
       icon: 'bi-telephone',
       text: 'You had a call with Milton Romaguera',
       description: 'Then we had a follow-up phone call.',
@@ -31,13 +32,43 @@ export class Task1Component {
 
 
   newItem = {
-    icon: '',
+    icon: 'bi-chat-left-text',
     text: '',
-    date: 'Now',
+    date: '',
     description: '',
   };
+  timerInterval: any;
+
+  constructor() {
+    this.timerInterval = setInterval(() => {
+      this.updateTimelineDates();
+    }, 60000);
+  }
+
+  ngOnDestroy(): void {
+    if (this.timerInterval) {
+      clearInterval(this.timerInterval);
+    }
+  }
   // Select an icon
   selectIcon(icon: string) {
+    switch (icon) {
+      case 'bi-chat-left-text':
+        this.selectedText = `meeting`;
+        break;
+      case 'bi-telephone':
+        this.selectedText = `call`;
+        break;
+      case 'bi-cup':
+        this.selectedText = `coffee`;
+        break;
+      case 'bi-file-text':
+        this.selectedText = `note`;
+        break;
+      default:
+        this.selectedText = '';
+        break;
+    }
     this.newItem.icon = icon;
     this.selectedIcon = icon;
   }
@@ -45,18 +76,20 @@ export class Task1Component {
   onTextInput(event: Event) {
     const inputElement = event.target as HTMLTextAreaElement;
     if (inputElement) {
-      this.newItem.text = inputElement.value;
+      this.newItem.description = inputElement.value;
     }
   }
 
   // Add new timeline item
   addItem() {
-    if (this.newItem.text && this.newItem.icon) {
-      this.timelineItems.unshift({ ...this.newItem });
+    if (this.newItem.description && this.newItem.icon) {
+      this.newItem.date = new Date().toLocaleString();
+      const text = `You had a ${this.selectedText} with Milton Romaguera`;
+      this.timelineItems.unshift({ ...this.newItem, text: text });
       this.newItem.text = '';
       this.newItem.icon = '';
       this.selectedIcon = '';
-      this.newItem.description = 'Newly added timeline item.';
+      this.newItem.description = '';
     } else {
       alert('Please enter text and select an icon!');
     }
@@ -65,4 +98,11 @@ export class Task1Component {
   handleEvent(item: TimelineItem) {
     this.timelineItems = this.timelineItems.filter((i) => i !== item);
   }
+
+  updateTimelineDates(): void {
+    this.timelineItems.forEach((item) => {
+      item.date = new Date(item.date).toISOString(); // Recalculate the date to trigger the pipe again
+    });
+  }
+
 }

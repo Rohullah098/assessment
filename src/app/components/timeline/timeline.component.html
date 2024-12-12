@@ -1,6 +1,6 @@
 @for (item of timelineItems; track $index) {
   <div class="d-flex mb-3">
-    <div class="timeline-date text-muted align-self-start mt-1">{{ item.date }}</div>
+    <div class="timeline-date text-muted align-self-start mt-1">{{ item.date | timeAgo }}</div>
     <div class="timeline-icon me-3 align-self-start mt-1">
       <i [class]="'bi ' + item.icon + ' text-info'"></i>
     </div>
@@ -9,9 +9,14 @@
         <p class="mb-0">{{ item.text }}</p>
         <div class="d-flex justify-content-between">
           <small class="text-muted">{{ item.description }}</small>
-          @if (!['3d','5d'].includes(item.date)) {
-            <button class="btn  btn-menu-item active-icon" (click)="removeItem(item)"><i class="bi bi-trash-fill"></i></button>
-          }
+          @if (!['12/10/24','12/9/24'].includes(item.date)) {
+            <div class="dropdown">
+              <button class="btn  btn-menu-item active-icon dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item cursor" (click)="removeItem(item)">Delete</a>
+              </div>
+            </div>  }
         </div>
       </div>
     </div>
